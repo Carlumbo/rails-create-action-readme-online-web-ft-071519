@@ -152,3 +152,25 @@ Processing by PostsController#new as HTML
 Completed 200 OK in 357ms (Views: 345.8ms | ActiveRecord: 1.3ms)
 
 
+Started POST "/posts" for 70.92.125.49 at 2019-09-30 03:18:53 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QGbnVUnQDeOmEM2s9rNwXL+k0WR3mw2+iXp50nYmbjGc/C6Z9SlBl2LGhtCFwqJEtMhGPiobxBwItKXnp30IOg==", "title"=>"Hello", "description"=>"World", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hello"], ["description", "World"], ["created_at", "2019-09-30 03:18:53.661308"], ["updated_at", "2019-09-30 03:18:53.661308"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `post_path' for #<PostsController:0x00007f287d4bfb98>
+Did you mean?  posts_path):
+  
+app/controllers/posts_controller.rb:20:in `create'
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.8ms)
